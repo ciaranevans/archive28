@@ -1,4 +1,4 @@
-<!-- <script>
+<script>
 </script>
 
 <div>
@@ -24,9 +24,9 @@
 		font-size: 3vw;
 	}
 </style>
- -->
 
- <script>
+
+ <!-- <script>
 	import { signIn, signOut } from "@auth/sveltekit/client"
 	import { page } from "$app/stores"
 	console.log($page.data.session)
@@ -51,4 +51,4 @@
 	  <span class="notSignedInText">You are not signed in</span>
 	  <button on:click={() => signIn("github")}>Sign In with GitHub</button>
 	{/if}
-  </p>
+  </p> -->
