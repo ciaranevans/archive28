@@ -8,7 +8,7 @@ $: resp = data.resp;
 <div>
 	<h1 class="header">Archivum28</h1>
 	<h1 class="header header-smaller">Coming soon.</h1>
-	{resp}
+	{JSON.parse(resp)}
 </div>
 
 <style>
