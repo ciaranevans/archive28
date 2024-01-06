@@ -1,11 +1,8 @@
 <script>
 
-$: resp = ""
+export let data;
 
-const callBackend = async() => {
-	resp = await (await fetch("http://backend.railway.internal:5603")).json()
-}
-
+$: resp = data.resp;
 </script>
 
 <div>
