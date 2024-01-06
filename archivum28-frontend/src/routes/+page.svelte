@@ -1,4 +1,6 @@
 <script>
+	import { json } from '@sveltejs/kit';
+
 
 export let data;
 
@@ -8,7 +10,7 @@ $: resp = data.resp;
 <div>
 	<h1 class="header">Archivum28</h1>
 	<h1 class="header header-smaller">Coming soon.</h1>
-	{JSON.parse(resp)}
+	{JSON.stringify(resp)}
 </div>
 
 <style>
