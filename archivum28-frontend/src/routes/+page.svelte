@@ -1,9 +1,17 @@
 <script>
+
+$: resp = ""
+
+const callBackend = async() => {
+	resp = await (await fetch("http://backend.railway.internal:5603")).json()
+}
+
 </script>
 
 <div>
 	<h1 class="header">Archivum28</h1>
 	<h1 class="header header-smaller">Coming soon.</h1>
+	{resp}
 </div>
 
 <style>
