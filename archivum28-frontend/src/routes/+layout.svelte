@@ -1,15 +1,27 @@
 <script>
 	import '../styles/fonts.css';
+	import { signIn, signOut } from '@auth/sveltekit/client';
+	import { page } from '$app/stores';
 </script>
 
 <title>Archivum28</title>
 <body>
 	<header class="header">
-		<div class="header-left">
+		<div class="header-title">
 			<h1>Archivum28</h1>
 		</div>
+		<div class="header-left">
+			<h1>Historia</h1>
+		</div>
+		<div class="header-left">
+			<h1>Eventus</h1>
+		</div>
 		<div class="header-right">
-			<button on:click={() => alert("Woops! Not yet!")}>Login</button>
+			{#if $page.data.session}
+				<button on:click={() => signOut()} class="button">Logout</button>
+			{:else}
+				<button on:click={() => signIn('instagram')}>Login</button>
+			{/if}
 		</div>
 	</header>
 	<div class="main"><slot /></div>
@@ -30,18 +42,23 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		font-size: 30px;
 		margin: 10px 10px 10px 10px;
-    }
-	.header-left h1 {
-        padding-top: 10px;
-		margin: 0;
+	}
+	.header-left,
+	.header-title {
+		font-size: 30px;
+		/* padding-left: 20px; */
+		margin-top: -30px;
+	}
+	.header-right {
+		margin-top: -40px; /* Adjust this value to fine-tune the vertical alignment */
 	}
 	.header-right button {
 		font-size: 30px;
 		cursor: pointer;
 		background-color: white;
 		border: none;
+		/* padding-top: */
 	}
 	.main {
 		flex: 1;
@@ -49,7 +66,23 @@
 		justify-content: center;
 		align-items: center;
 	}
-    /* :global(*) {
+
+	@media only screen and (max-width: 800px) {
+		.header {
+			flex-direction: column; /* Stack items in a column on small screens */
+		}
+		.header-left {
+			margin-top: -60px;
+		}
+		.header-right button {
+			margin-top: 10px;
+		}
+
+		.header-right button {
+			display: block; /* Display the button on small screens */
+		}
+	}
+	/* :global(*) {
         outline: auto;
     } */
 </style>
