@@ -3,7 +3,6 @@
 	import { signIn, signOut } from '@auth/sveltekit/client';
 	import { page } from '$app/stores';
 	import { json } from '@sveltejs/kit';
-    console.log(json($page.data.session?.user))
 </script>
 
 <title>Archivum28</title>
