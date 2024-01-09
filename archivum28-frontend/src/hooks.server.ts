@@ -1,10 +1,10 @@
 import { SvelteKitAuth } from '@auth/sveltekit';
-import Instagram from '@auth/sveltekit/providers/instagram';
-import { AUTH_SECRET, INSTAGRAM_CLIENT_ID, INSTAGRAM_CLIENT_SECRET } from '$env/static/private';
+import GitHub from '@auth/sveltekit/providers/github';
+import { GITHUB_ID, GITHUB_SECRET, AUTH_SECRET } from '$env/static/private';
 
 export const handle = SvelteKitAuth({
 	providers: [
-        Instagram({clientId: INSTAGRAM_CLIENT_ID, clientSecret: INSTAGRAM_CLIENT_SECRET})
+        GitHub({ clientId: GITHUB_ID, clientSecret: GITHUB_SECRET }),
     ],
 	secret: AUTH_SECRET,
 	trustHost: true

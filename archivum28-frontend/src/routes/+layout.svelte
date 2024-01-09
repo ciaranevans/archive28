@@ -20,7 +20,7 @@
 			{#if $page.data.session}
 				<button on:click={() => signOut()} class="button">Logout</button>
 			{:else}
-				<button on:click={() => signIn('instagram')}>Login</button>
+				<button on:click={() => signIn('github')}>Login</button>
 			{/if}
 		</div>
 	</header>
